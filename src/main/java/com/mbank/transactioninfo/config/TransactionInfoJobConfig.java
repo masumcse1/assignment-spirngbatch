@@ -50,10 +50,11 @@ public class TransactionInfoJobConfig {
     @Bean
     public FlatFileItemReader<TransactionInfoDto> transactioninfoInfoFileReader(){
         return new FlatFileItemReaderBuilder<TransactionInfoDto>()
-                .resource(new ClassPathResource("data/dataSource.csv"))
+                .resource(new ClassPathResource("data/dataSource.txt"))
                 .name("transactioninfoInfoFileReader")
                 .delimited()
-                .delimiter(",")
+              //  .delimiter(",")
+                .delimiter("|")
                 .names(new String[]{"ACCOUNT_NUMBER","TRX_AMOUNT","DESCRIPTION","TRX_DATE","TRX_TIME","CUSTOMER_ID"})
                 .linesToSkip(1)
                 .targetType(TransactionInfoDto.class)

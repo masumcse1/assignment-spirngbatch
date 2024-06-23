@@ -10,30 +10,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 public class DateUtil {
-    public static Date getDate(String dateValue , String format) {
-        ZoneId defaultZoneId = ZoneId.systemDefault();
+    public static String DATEFORMAT ="yyyy-MM-dd";
+    public static String TIMEFORMAAT ="HH:mm:ss";
 
-        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern(format);
-        LocalDate localDate =  LocalDate.parse(dateValue,dateTimeFormatter);
-        return  Date.from(localDate.atStartOfDay(defaultZoneId).toInstant());
-
-
-    }
-
-    public static Time getTime(String time,String timeFormat) {
-        SimpleDateFormat sdf = new SimpleDateFormat(timeFormat);
-
-        try {
-            long ms = sdf.parse(time).getTime();
-            Time stime = new Time(ms);
-
-            System.out.println(stime);
-            return stime;
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-
-         return null;
-
-    }
 }

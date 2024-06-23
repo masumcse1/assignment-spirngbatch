@@ -1,12 +1,12 @@
 package com.mbank.transactioninfo.entity;
 
-
 import lombok.Data;
-import java.sql.Time;
+import java.math.BigDecimal;
 import javax.persistence.*;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
-import java.util.Date;
+import java.time.LocalDate;
+import java.time.LocalTime;
 
 @Entity
 @Data
@@ -15,11 +15,11 @@ public class TransactionInfo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String accountNo;
-    private double transactionAmount;
-    private String description;
-    private Date transactionDate;
-    private Time transactionTime;
     private String CUSTOMERId;
+    private String accountNo;
+    private BigDecimal transactionAmount;
+    private LocalDate transactionDate;
+    private LocalTime transactionTime;
+    private String description;
 
 }
