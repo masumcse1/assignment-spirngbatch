@@ -3,6 +3,8 @@ package com.mbank.transactioninfo.service;
 import com.mbank.transactioninfo.entity.TransactionInfo;
 import com.mbank.transactioninfo.repository.TransactionInfoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -14,6 +16,11 @@ public class TransactionInfoService {
 
     @Autowired
     private TransactionInfoRepository repository;
+
+    public Page<TransactionInfo> searchTransactions(String customerId, String accountNo, String description, Pageable pageable) {
+        return repository.findByCUSTOMERIdContainingOrAccountNoContainingOrDescriptionContaining(
+                customerId, accountNo, description, pageable);
+    }
 
     public List<TransactionInfo> getTransactionsByCustomerId(String customerId) {
         return repository.findByCUSTOMERId(customerId);
