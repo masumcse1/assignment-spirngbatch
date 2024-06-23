@@ -15,12 +15,4 @@ public interface TransactionInfoRepository extends JpaRepository<TransactionInfo
 
     Page<TransactionInfo> findByCUSTOMERIdContainingOrAccountNoContainingOrDescriptionContaining(
             String customerId, String accountNo, String description, Pageable pageable);
-
-
-    List<TransactionInfo> findByCUSTOMERId(String customerId);
-
-    List<TransactionInfo> findByAccountNo(String accountNo);
-
-    @Query("SELECT t FROM TransactionInfo t WHERE t.description LIKE %:description%")
-    List<TransactionInfo> findByDescriptionContaining(@Param("description") String description);
 }

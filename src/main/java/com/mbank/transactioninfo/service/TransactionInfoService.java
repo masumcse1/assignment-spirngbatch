@@ -22,18 +22,6 @@ public class TransactionInfoService {
                 customerId, accountNo, description, pageable);
     }
 
-    public List<TransactionInfo> getTransactionsByCustomerId(String customerId) {
-        return repository.findByCUSTOMERId(customerId);
-    }
-
-    public List<TransactionInfo> getTransactionsByAccountNo(String accountNo) {
-        return repository.findByAccountNo(accountNo);
-    }
-
-    public List<TransactionInfo> getTransactionsByDescription(String description) {
-        return repository.findByDescriptionContaining(description);
-    }
-
     @Transactional
     public TransactionInfo updateDescription(Long id, String description) throws Exception {
         Optional<TransactionInfo> optionalTransactionInfo = repository.findById(id);

@@ -34,23 +34,4 @@ public class TransactionInfoController {
         return transactionInfoService.updateDescription(id, description);
     }
 
-    @GetMapping("/search/customer")
-    public List<TransactionInfo> searchByCustomerId(@RequestParam String customerId) {
-        return transactionInfoService.getTransactionsByCustomerId(customerId);
-    }
-
-    @GetMapping("/search/account")
-    public List<TransactionInfo> searchByAccountNo(@RequestParam String accountNo) {
-        return transactionInfoService.getTransactionsByAccountNo(accountNo);
-    }
-
-    @GetMapping("/search/description")
-    public List<TransactionInfo> searchByDescription(@RequestParam String description) {
-        return transactionInfoService.getTransactionsByDescription(description);
-    }
-
-
-
-
-
 }
