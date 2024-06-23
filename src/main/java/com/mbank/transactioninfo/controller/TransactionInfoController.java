@@ -17,7 +17,7 @@ public class TransactionInfoController {
     @Autowired
     private TransactionInfoService transactionInfoService;
 
-    @GetMapping("/search")
+    @RequestMapping(value = "/search",method = RequestMethod.POST)
     public Page<TransactionInfo> searchTransactions(
             @RequestParam(required = false) String customerId,
             @RequestParam(required = false) String accountNo,
@@ -27,6 +27,11 @@ public class TransactionInfoController {
 
         Pageable pageable = PageRequest.of(page, size);
         return transactionInfoService.searchTransactions(customerId, accountNo, description, pageable);
+    }
+
+    @PutMapping("/update/{id}")
+    public TransactionInfo updateDescription(@PathVariable Long id, @RequestParam String description) throws Exception {
+        return transactionInfoService.updateDescription(id, description);
     }
 
     @GetMapping("/search/customer")
@@ -45,10 +50,7 @@ public class TransactionInfoController {
     }
 
 
-    @PutMapping("/update/{id}")
-    public TransactionInfo updateDescription(@PathVariable Long id, @RequestParam String description) throws Exception {
-        return transactionInfoService.updateDescription(id, description);
-    }
+
 
 
 }
