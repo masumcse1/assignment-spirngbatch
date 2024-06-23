@@ -2,9 +2,7 @@ package com.mbank.transactioninfo.entity;
 
 
 import lombok.Data;
-import lombok.NoArgsConstructor;
-import java.sql.Timestamp;
-
+import java.sql.Time;
 import javax.persistence.*;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -21,7 +19,7 @@ public class TransactionInfo {
     private double transactionAmount;
     private String description;
     private Date transactionDate;
-    private Date transactionTime;
+    private Time transactionTime;
     private String CUSTOMERId;
 
 }
