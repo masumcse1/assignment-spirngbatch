@@ -37,6 +37,10 @@ java -jar target/assignment-spirngbatch-1.0-SNAPSHOT.jar
 
 # project testing steps
 ```
+1.Import postman colleciton file from bellow location.
+\postmancolleciton\springbatch.postman_collection.json
+2. fistly need to call authentication api for token generation.
+3. then test other api (update , search)
 
 
 
