@@ -24,7 +24,16 @@ public class JobCompletionNotificationListener implements JobExecutionListener {
 
     @Override
     public void beforeJob(JobExecution jobExecution) {
-        // No action needed before job
+        Resource inputFile = resourceLoader.getResource(inputFilePath);
+
+        try {
+            File file = inputFile.getFile();
+            if (!file.exists()) {
+                throw new IllegalStateException("Input file not found: " + inputFilePath);
+            }
+        } catch (IOException e) {
+            throw new IllegalStateException("Error accessing input file: " + inputFilePath, e);
+        }
     }
 
     @Override
