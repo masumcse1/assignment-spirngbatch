@@ -9,3 +9,13 @@
 6. spring.datasource.username: Need to put valid postgreSQL user 
 7. spring.datasource.password: Password for the PostgreSQL database
 ```
+
+# Cron Expression explanation----      (0 */1 * * * ?).
+```
+0   - At the 0th second.
+*/1 - Every 1 minute (default).
+*   - Every hour.
+*   - Every day of the month.
+*   - Every month.
+?   - No specific day of the week.
+```
