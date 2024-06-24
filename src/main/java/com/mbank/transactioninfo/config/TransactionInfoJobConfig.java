@@ -53,7 +53,6 @@ public class TransactionInfoJobConfig {
                 .resource(new ClassPathResource("data/dataSource.txt"))
                 .name("transactioninfoInfoFileReader")
                 .delimited()
-              //  .delimiter(",")
                 .delimiter("|")
                 .names(new String[]{"ACCOUNT_NUMBER","TRX_AMOUNT","DESCRIPTION","TRX_DATE","TRX_TIME","CUSTOMER_ID"})
                 .linesToSkip(1)
