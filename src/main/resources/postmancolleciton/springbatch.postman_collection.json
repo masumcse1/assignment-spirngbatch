@@ -7,7 +7,7 @@
 	},
 	"item": [
 		{
-			"name": "Update ID",
+			"name": "Update Tranaction",
 			"request": {
 				"method": "PUT",
 				"header": [],
@@ -170,7 +170,7 @@
 			"response": []
 		},
 		{
-			"name": "login sucess",
+			"name": "Authentication",
 			"request": {
 				"method": "POST",
 				"header": [],
