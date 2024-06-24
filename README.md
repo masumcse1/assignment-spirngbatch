@@ -42,8 +42,12 @@ java -jar target/assignment-spirngbatch-1.0.jar
 2. fistly need to call authentication api for token generation.
 3. then test other api (update , search)
 
-
-
 ```
 
+```
+        following 2 porints is completed for this assignement.
+1.       Prepare a batch job to consume the attached text file.
+2.       Prepare RESTFUL API to (1)Retrieve & (2) Update (description) the records
+3.       Prepare frond-end screen to call RESTFUL API (No done)
+```
 
