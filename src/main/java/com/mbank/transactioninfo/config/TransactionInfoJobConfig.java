@@ -41,14 +41,14 @@ public class TransactionInfoJobConfig {
     public Step fromFileIntoDataBase(){
         return stepBuilderFactory.get("fromFileIntoDataBase")
                 .<TransactionInfoDto,TransactionInfo>chunk(10)
-                .reader(transactioninfoInfoFileReader())
+                .reader(transactIoninfoInfoFileReader())
                 .processor(transactionInfoItemProcessor)
-                .writer(salesInfoItemWriter())
+                .writer(transactionInfoItemWriter())
                 .build();
     }
 
     @Bean
-    public FlatFileItemReader<TransactionInfoDto> transactioninfoInfoFileReader(){
+    public FlatFileItemReader<TransactionInfoDto> transactIoninfoInfoFileReader(){
         return new FlatFileItemReaderBuilder<TransactionInfoDto>()
                 .resource(new ClassPathResource("data/dataSource.txt"))
                 .name("transactioninfoInfoFileReader")
@@ -62,7 +62,7 @@ public class TransactionInfoJobConfig {
     }
 
     @Bean
-    public JpaItemWriter<TransactionInfo> salesInfoItemWriter(){
+    public JpaItemWriter<TransactionInfo> transactionInfoItemWriter(){
         return new JpaItemWriterBuilder<TransactionInfo>()
                 .entityManagerFactory(entityManagerFactory)
                 .build();
