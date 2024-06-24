@@ -13,6 +13,6 @@ import java.util.List;
 @Repository
 public interface TransactionInfoRepository extends JpaRepository<TransactionInfo, Long> {
 
-    Page<TransactionInfo> findByCUSTOMERIdContainingOrAccountNoContainingOrDescriptionContaining(
+    Page<TransactionInfo> findByCustomerIdContainingOrAccountNoContainingOrDescriptionContaining(
             String customerId, String accountNo, String description, Pageable pageable);
 }

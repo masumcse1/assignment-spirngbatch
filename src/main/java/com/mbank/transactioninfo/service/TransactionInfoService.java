@@ -18,7 +18,7 @@ public class TransactionInfoService {
     private TransactionInfoRepository repository;
 
     public Page<TransactionInfo> searchTransactions(String customerId, String accountNo, String description, Pageable pageable) {
-        return repository.findByCUSTOMERIdContainingOrAccountNoContainingOrDescriptionContaining(
+        return repository.findByCustomerIdContainingOrAccountNoContainingOrDescriptionContaining(
                 customerId, accountNo, description, pageable);
     }
 

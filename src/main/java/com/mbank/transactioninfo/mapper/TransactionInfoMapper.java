@@ -20,7 +20,7 @@ public class TransactionInfoMapper {
   public  TransactionInfo getEntityFromDto(TransactionInfoDto transactionInfoDto){
 
         TransactionInfo transactionInfo = new TransactionInfo();
-        transactionInfo.setCUSTOMERId(transactionInfoDto.getCUSTOMER_ID());
+        transactionInfo.setCustomerId(transactionInfoDto.getCUSTOMER_ID());
         transactionInfo.setAccountNo(transactionInfoDto.getACCOUNT_NUMBER());
         transactionInfo.setTransactionAmount(BigDecimal.valueOf(transactionInfoDto.getTRX_AMOUNT()));
         transactionInfo.setDescription(transactionInfoDto.getDESCRIPTION());

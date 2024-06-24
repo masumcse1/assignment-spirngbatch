@@ -15,7 +15,7 @@ public class TransactionInfo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String CUSTOMERId;
+    private String customerId;
     private String accountNo;
     private BigDecimal transactionAmount;
     private LocalDate transactionDate;

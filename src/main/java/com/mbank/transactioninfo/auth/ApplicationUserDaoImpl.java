@@ -13,12 +13,12 @@ import static com.mbank.transactioninfo.security.ApplicationUserRole.ADMIN;
 
 
 @Repository("hardcode")
-public class ApplicationUserDaoService implements ApplicationUserDao {
+public class ApplicationUserDaoImpl implements IApplicationUserDao {
 
     private final PasswordEncoder passwordEncoder;
 
     @Autowired
-    public ApplicationUserDaoService(PasswordEncoder passwordEncoder) {
+    public ApplicationUserDaoImpl(PasswordEncoder passwordEncoder) {
         this.passwordEncoder = passwordEncoder;
     }
 

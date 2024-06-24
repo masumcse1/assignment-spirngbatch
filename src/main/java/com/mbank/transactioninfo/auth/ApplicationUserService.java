@@ -10,10 +10,10 @@ import org.springframework.stereotype.Service;
 @Service
 public class ApplicationUserService implements UserDetailsService {
 
-    private final ApplicationUserDao applicationUserDao;
+    private final IApplicationUserDao applicationUserDao;
 
     @Autowired
-    public ApplicationUserService(@Qualifier("hardcode") ApplicationUserDao applicationUserDao) {
+    public ApplicationUserService(@Qualifier("hardcode") IApplicationUserDao applicationUserDao) {
         this.applicationUserDao = applicationUserDao;
     }
 
