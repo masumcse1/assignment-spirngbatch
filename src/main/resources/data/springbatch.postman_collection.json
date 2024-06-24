@@ -1,0 +1,201 @@
+{
+	"info": {
+		"_postman_id": "93cf3e94-99b1-4740-952b-3d20ace37af6",
+		"name": "springbatch",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30925695"
+	},
+	"item": [
+		{
+			"name": "Update ID",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8085/api/transactions/update/1?description=mamun\n",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"api",
+						"transactions",
+						"update",
+						"1"
+					],
+					"query": [
+						{
+							"key": "description",
+							"value": "mamun\n"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "page customer",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtYXN1bSIsImF1dGhvcml0aWVzIjpbeyJhdXRob3JpdHkiOiJ0cmFuc2FjdGlvbmluZm86d3JpdGUifSx7ImF1dGhvcml0eSI6IlJPTEVfQURNSU4ifSx7ImF1dGhvcml0eSI6InRyYW5zYWN0aW9uaW5mbzpyZWFkIn1dLCJpYXQiOjE3MTkxNjg3NjYsImV4cCI6MTcyMDAyOTYwMH0.wcQrU4U8waA3MvSH2cm0eWz_qRx3bCwKJSXUcKTFkXpnhYebGJBbujpZZApqn38C0gplYR_pBRci51tWFYXR2g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8085/api/transactions/search?customerId=222&page=0&size=5\n",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"api",
+						"transactions",
+						"search"
+					],
+					"query": [
+						{
+							"key": "customerId",
+							"value": "222"
+						},
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "size",
+							"value": "5\n"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "page account",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtYXN1bSIsImF1dGhvcml0aWVzIjpbeyJhdXRob3JpdHkiOiJ0cmFuc2FjdGlvbmluZm86d3JpdGUifSx7ImF1dGhvcml0eSI6IlJPTEVfQURNSU4ifSx7ImF1dGhvcml0eSI6InRyYW5zYWN0aW9uaW5mbzpyZWFkIn1dLCJpYXQiOjE3MTkxNjg3NjYsImV4cCI6MTcyMDAyOTYwMH0.wcQrU4U8waA3MvSH2cm0eWz_qRx3bCwKJSXUcKTFkXpnhYebGJBbujpZZApqn38C0gplYR_pBRci51tWFYXR2g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8085/api/transactions/search?accountNo=8872838299&page=0&size=6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"api",
+						"transactions",
+						"search"
+					],
+					"query": [
+						{
+							"key": "accountNo",
+							"value": "8872838299"
+						},
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "size",
+							"value": "6"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "page description",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtYXN1bSIsImF1dGhvcml0aWVzIjpbeyJhdXRob3JpdHkiOiJ0cmFuc2FjdGlvbmluZm86d3JpdGUifSx7ImF1dGhvcml0eSI6IlJPTEVfQURNSU4ifSx7ImF1dGhvcml0eSI6InRyYW5zYWN0aW9uaW5mbzpyZWFkIn1dLCJpYXQiOjE3MTkxNjg3NjYsImV4cCI6MTcyMDAyOTYwMH0.wcQrU4U8waA3MvSH2cm0eWz_qRx3bCwKJSXUcKTFkXpnhYebGJBbujpZZApqn38C0gplYR_pBRci51tWFYXR2g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8085/api/transactions/search?description=FUND TRANSFER&page=0&size=10\n",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"api",
+						"transactions",
+						"search"
+					],
+					"query": [
+						{
+							"key": "description",
+							"value": "FUND TRANSFER"
+						},
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "size",
+							"value": "10\n"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login sucess",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"masum\",\r\n    \"password\":\"password\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8085/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

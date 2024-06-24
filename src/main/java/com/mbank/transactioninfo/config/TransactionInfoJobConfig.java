@@ -13,9 +13,11 @@ import org.springframework.batch.item.database.JpaItemWriter;
 import org.springframework.batch.item.database.builder.JpaItemWriterBuilder;
 import org.springframework.batch.item.file.FlatFileItemReader;
 import org.springframework.batch.item.file.builder.FlatFileItemReaderBuilder;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.Resource;
+
 import javax.persistence.EntityManagerFactory;
 
 @Configuration
@@ -26,16 +28,19 @@ public class TransactionInfoJobConfig {
     private final StepBuilderFactory stepBuilderFactory;
     private final EntityManagerFactory entityManagerFactory;
     private final TransactionInfoItemProcessor transactionInfoItemProcessor;
+    private final JobCompletionNotificationListener jobCompletionNotificationListener;
 
+    @Value("${transactioninfo.file.path}")
+    private Resource inputFile;
 
     @Bean
     public Job importTransacitonInfo(){
         return jobBuilderFactory.get("importTransacitonInfo")
                 .incrementer(new RunIdIncrementer())
+                .listener(jobCompletionNotificationListener)
                 .start(fromFileIntoDataBase())
                 .build();
     }
-
 
     @Bean
     public Step fromFileIntoDataBase(){
@@ -50,7 +55,7 @@ public class TransactionInfoJobConfig {
     @Bean
     public FlatFileItemReader<TransactionInfoDto> transactIoninfoInfoFileReader(){
         return new FlatFileItemReaderBuilder<TransactionInfoDto>()
-                .resource(new ClassPathResource("data/dataSource.txt"))
+                .resource(inputFile)
                 .name("transactioninfoInfoFileReader")
                 .delimited()
                 .delimiter("|")
@@ -66,6 +71,4 @@ public class TransactionInfoJobConfig {
                 .entityManagerFactory(entityManagerFactory)
                 .build();
     }
-
-
 }
